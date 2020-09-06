@@ -1409,9 +1409,11 @@
 #     print(p)
 #     print(ns)
 #    print("".join(ns[:a:])+p+ns[:a+1:])
-for i in range(int(input())):
-    user = input()
-    ls = list(map(int, input().split()))
-    a = ls.index(max(ls))
-    print(len(ls[a::]))
+# for i in range(int(input())):
+#     user = input()
+#     ls = list(map(int, input().split()))
+#     a = ls.index(max(ls))
+#     print(len(ls[a::]))
 
+def giteset():
+    print("im in")
