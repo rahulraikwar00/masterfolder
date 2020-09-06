@@ -1415,5 +1415,16 @@
 #     a = ls.index(max(ls))
 #     print(len(ls[a::]))
 
-def giteset():
-    print("im in")
+'''codeforcse'''
+for i in range(int(input())):
+    n =int(input())
+    ls =[]
+    for i in range(n):
+        ls+=input()
+    ss =set(ls)
+    for i in ss:
+        if ls.count(i)%n != 0:
+            print("NO")
+            break
+    else:
+        print("YES")
