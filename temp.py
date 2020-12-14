@@ -255,7 +255,7 @@
 # # # #     while x <= n : 
 # # # #         res_size = multiply(x, res, res_size) 
 # # # #         x = x + 1
-      
+	  
 # # # #     print ("Factorial of given number is") 
 # # # #     i = res_size-1
 # # # #     while i >= 0 : 
@@ -275,7 +275,7 @@
 # # # #         res[res_size] = carry % 10 
 # # # #         carry = carry // 10
 # # # #         res_size = res_size + 1
-          
+		  
 # # # #     return res_size
 # # # # factorial(100) 
 # # # # print("--- %s seconds ---" % (time.time() - start_time))
@@ -366,7 +366,7 @@
 # # #          run =True
 # # #       else:
 # # #          run = False
-         
+		 
 # # #    else:
 # # #       pass
 # # #    choices()
@@ -482,7 +482,7 @@
 # # 			return res
 			
 # # 	return 0
-      
+	  
 # # s = input()
 # # print(longestPrefixSuffix(s)) 
 
@@ -986,14 +986,14 @@
 # #                 zero_cnt += binary.count('0') + (max_bin - len(binary))
 # #             else:
 # #                 zero_cnt += binary.count('0')
-                
+				
 # #             one_cnt += binary.count('1')
-            
+			
 # #     if one_cnt == zero_cnt:
 # #         tot_cnt += 1
 # #         bin_tot = '0'*(max_bin - len(bin(tot_cnt)[2:])) + str(bin(tot_cnt)[2:])
 # #         zero_cnt, one_cnt = 0,0
-        
+		
 # # print(bin_tot,end="")
 # # import collections
 # # def pset(seqqq):
@@ -1042,7 +1042,7 @@
 # #         self.left = None
 # #         self.right = None
 # #         self.data = data
-    
+	
 # #     def insert(self, data):
 # # 	# Compare the new value with the parent node
 # #         if self.data:
@@ -1058,7 +1058,7 @@
 # #                     self.right.insert(data)
 # #         else:
 # #             self.data = data
-    
+	
 # #     def PrintTree(self):
 # #         if self.left:
 # #             self.left.PrintTree()
@@ -1415,16 +1415,93 @@
 #     a = ls.index(max(ls))
 #     print(len(ls[a::]))
 
-'''codeforcse'''
-for i in range(int(input())):
-    n =int(input())
-    ls =[]
-    for i in range(n):
-        ls+=input()
-    ss =set(ls)
-    for i in ss:
-        if ls.count(i)%n != 0:
-            print("NO")
-            break
-    else:
-        print("YES")
+# '''codeforcse'''
+# for i in range(int(input())):
+#     n =int(input())
+#     ls =[]
+#     for i in range(n):
+#         ls+=input()
+#     ss =set(ls)
+#     for i in ss:
+#         if ls.count(i)%n != 0:
+#             print("NO")
+#             break
+#     else:
+#         print("YES")
+
+
+# ls= [1,2,3,4,5,7]
+# print(sum(ls)%2==0)
+# a=0
+# m=0
+# for i in ls[::-1]:
+# 	if m<14:
+# 		a+=1
+# 	m+=i
+# print(a)
+# # print(ls[:a:]+ls[a+1::])
+
+
+
+# # A Python program to print all  
+# #permutations using library function 
+# for i in range(int(input())):
+# 	n =int(input())
+# 	ls=list(range(1,n+1,))
+# 	tempp=ls.copy()
+# 	if sum(ls)%2!=0:
+# 		print("gvhvhgv")
+# 		continue
+# 	for i in range(n):
+# 		for j in range(i+1,n):
+# 		#	print(j)
+# 			tempp[i],tempp[j]=tempp[j],tempp[i]
+# 			#print(tempp)
+# 			#print(tempp)
+# 			cnt =0
+# 			a =True
+# 			for p in range(n):
+# 				if sum(tempp[:p:-1])==sum(tempp[:p+1:]):
+# 					cnt+=1
+# 					a =False
+# 					break
+# 			print(cnt)
+# 			break
+# 			tempp=ls.copy()
+# 			#print(tempp)
+# #print(list(range(6)))
+
+
+
+
+def SieveOfEratosthenes(n):  
+	prime = [True for i in range(n + 1)] 
+	p = 2
+	while (p * p <= n):  
+		if (prime[p] == True): 
+			for i in range(p * 2, n + 1, p): 
+				prime[i] = False
+		p += 1
+	prime[0]= False
+	prime[1]= False
+	rp =[]
+
+	for p in range(n + 1): 
+		if prime[p]: 
+			rp.append(p)
+	return rp 
+if __name__=='__main__': 
+	n = 10000
+	plist =SieveOfEratosthenes(n)
+	ls = list(map(int, input().split()))
+	pl = []
+	visited = [0]*len(ls)
+	for i in ls[::-1]:
+		if i not in visited:
+			pass
+		else:
+			pl[len(ls)-i]
+
+	print(*pl)
+
+

@@ -18,6 +18,6 @@ def SieveOfEratosthenes(n):
             rp.append(p)
     print(len(rp))  
 if __name__=='__main__': 
-    n = 10000000
+    n = 10000
     SieveOfEratosthenes(n) 
 print("--- %s seconds ---" % (time.time() - start_time))
